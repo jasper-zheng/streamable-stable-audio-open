@@ -6,7 +6,7 @@ Streaming pre-trained [Stable Audio Open 1.0](https://huggingface.co/stabilityai
 
 
 
-https://github.com/user-attachments/assets/4c279d6e-d32e-41a8-ad7e-30a5e745afe9
+https://github.com/user-attachments/assets/ba8006f7-f559-481d-b7a0-5337bf483b2b
 
 
 
