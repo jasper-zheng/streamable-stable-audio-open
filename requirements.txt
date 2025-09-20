@@ -3,7 +3,7 @@ cached_conv==2.5.0
 einops==0.8.1
 huggingface_hub==0.35.0
 librosa==0.11.0
-numpy==1.23.5
+numpy
 packaging==25.0
 safetensors==0.6.2
 torch==2.5.0
