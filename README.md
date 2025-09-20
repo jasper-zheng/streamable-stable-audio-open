@@ -1,6 +1,6 @@
 # Streaming Stable Audio Open 1.0's Autoencoder
 
-Exporting the autoencoder in [Stable Audio Open 1.0](https://huggingface.co/stabilityai/stable-audio-open-1.0) to TorchScript for streamable continuous inference, to be used with [nn~](https://github.com/acids-ircam/nn_tilde) in MaxMSP/PureData.
+Streaming pre-trained [Stable Audio Open 1.0](https://huggingface.co/stabilityai/stable-audio-open-1.0)'s autoencoder with cached convolution, for realtime continuous inference. And scripting it to TorchScript to be used with [nn~](https://github.com/acids-ircam/nn_tilde) in MaxMSP/PureData.
 
 > **Important note:** This doesn't stream the text-to-audio diffusion model in Stable Audio Open, this is only for the autoencoder (the pretransform model), the purpose is to use it for realtime latent manipulation or some other downstream tasks.
 
