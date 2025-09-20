@@ -208,3 +208,6 @@ __marimo__/
 
 .vscode
 exports
+.DS_Store
+.env
+.venv
