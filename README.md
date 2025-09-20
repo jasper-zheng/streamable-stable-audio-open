@@ -4,6 +4,12 @@ Exporting the autoencoder in [Stable Audio Open 1.0](https://huggingface.co/stab
 
 > **Important note:** This doesn't stream the text-to-audio diffusion model in Stable Audio Open, this is only for the autoencoder (the pretransform model), the purpose is to use it for realtime latent manipulation or some other downstream tasks.
 
+
+
+https://github.com/user-attachments/assets/4c279d6e-d32e-41a8-ad7e-30a5e745afe9
+
+
+
 ## Supported Pre-Trained Model
 
 `stabilityai/stable-audio-open-1.0`: [HuggingFace](https://huggingface.co/stabilityai/stable-audio-open-1.0).  
@@ -14,20 +20,11 @@ To download the pretrained `stable-audio-open-1.0` model, you'll need a HuggingF
 
 Use the `export.py` script to export the Stable Audio Open autoencoder to TorchScript format. The script provides several options to customize the export process.
 
-**Important:** Make sure to add the `--streaming` flag for cached convolution, otherwise you will hear clicking artifacts when loaded in Max.
+**Important:** Make sure to add the `--streaming` flag for cached convolution, otherwise you will hear clicking artifacts when loaded in Max.   
+**Important:** Buffer size in `nn~` is recommended to be something above `4096`, which can be set through the third argument in `nn~`.
 
-```bash
-python export.py --streaming
-```
-
-Specify the output path for the TorchScript file using `--output`.
 ```bash
 python export.py --output path/to/exported/vae.ts --streaming
-```
-
-Specify the HuggingFace model repository id using `--pretrained-name`.
-```bash
-python export.py --pretrained-name stabilityai/stable-audio-open-1.0  --streaming
 ```
 
 Choose the device for model loading and export using `--device`.
@@ -55,4 +52,8 @@ python export.py --test --streaming
 
 This is a third party implementation and not made by Stability AI, for non-commercial research purpose. Please follow the [stable-audio-community](https://huggingface.co/stabilityai/stable-audio-open-1.0/blob/main/LICENSE.md) license that comes with stable-audio-open-1.0.
 
+## Acknowledgement
+
+Reused model loading/building code from [stable-audio-tools](https://github.com/Stability-AI/stable-audio-tools.git)  
+Reused exporting code from [nn_tilde](https://github.com/acids-ircam/nn_tilde.git)
 
