@@ -7,7 +7,12 @@ import math
 
 from torch import nn, sin, pow
 from torch.nn import functional as F
-from torch.nn.utils.parametrizations import weight_norm
+try:
+    from torch.nn.utils.parametrizations import weight_norm
+    pt250 = True
+except ImportError:
+    from .weight_norm import weight_norm
+pt250 = False
 from torchaudio import transforms as T
 from alias_free_torch import Activation1d
 from typing import List, Literal, Dict, Any, Callable, cast, Optional

@@ -172,3 +172,4 @@ class Module(torch.nn.Module):
         self.eval()
         scripted = torch.jit.script(self)
         scripted.save(path)
+        return scripted

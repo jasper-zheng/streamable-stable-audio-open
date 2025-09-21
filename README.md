@@ -9,14 +9,12 @@ Streaming pre-trained [Stable Audio Open 1.0](https://huggingface.co/stabilityai
 https://github.com/user-attachments/assets/ba8006f7-f559-481d-b7a0-5337bf483b2b
 
 
+
 ## Supported Pre-Trained Model
 
 `stabilityai/stable-audio-open-1.0`: [HuggingFace](https://huggingface.co/stabilityai/stable-audio-open-1.0).  
 
 To download the pretrained `stable-audio-open-1.0` model, you'll need a HuggingFace account and agree to Stability AI's License Agreement which can be found in the link above.  
-
-A demo for running chunked audio: <a href="https://colab.research.google.com/github/jasper-zheng/streamable-stable-audio-open/blob/main/demo.ipynb" target="_parent"><img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"/></a>
-
 
 ## How to export to TorchScript
 
@@ -29,12 +27,12 @@ Use the `export.py` script to export the Stable Audio Open autoencoder to TorchS
 python export.py --output path/to/exported/vae.ts --streaming
 ```
 
-Choose the device for model loading and export using `--device`.
+Choose the device for model testing and exporting by `--test-device` and `--export-device` (options: `[cpu/cuda/mps]`).
 ```bash
-python export.py --device mps --streaming
+python export.py --test-device mps --export-device mps --streaming
 ```
 
-Export the model in half precision (float16) adding `--half`, to potentially reduce inference speed.
+Export the model in half precision (float16) adding `--half`, to potentially reduce inference speed. (Not working well in PyTorch 2.0.x)
 ```bash
 python export.py --half --streaming
 ```

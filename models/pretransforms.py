@@ -57,6 +57,7 @@ class AutoencoderPretransform(Pretransform):
             out_ratio=1,
             input_labels=['(signal) Channel %d'%d for d in range(1, 1 + 2)],
             output_labels=['(signal) Channel %d'%d for d in range(1, 1+2)],
+            test_method=False,
             test_buffer_size = 4096,
             test_device=test_device
         )
@@ -72,6 +73,7 @@ class AutoencoderPretransform(Pretransform):
                 f'(signal) Latent dimension {i + 1}'
                 for i in range(model.latent_dim)
             ],
+            test_method=False,
             test_buffer_size = 4096,
             test_device=test_device
         )
@@ -87,6 +89,7 @@ class AutoencoderPretransform(Pretransform):
                 for i in range(model.latent_dim)
             ],
             output_labels=['(signal) Channel %d'%d for d in range(1, 1+2)],
+            test_method=False,
             test_buffer_size = 4096,
             test_device=test_device
         )
