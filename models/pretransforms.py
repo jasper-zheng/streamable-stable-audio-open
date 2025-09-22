@@ -42,6 +42,7 @@ class AutoencoderPretransform(Pretransform):
         self.encoded_channels = model.latent_dim
 
         self.skip_bottleneck = skip_bottleneck
+        self.mono = False
 
         if self.model_half:
             self.model.half()
@@ -101,6 +102,15 @@ class AutoencoderPretransform(Pretransform):
         if self.model_half:
             x = x.half()
 
+        if x.dim() == 2:
+            x = x.unsqueeze(0).repeat(1, 2, 1)  # Duplicate the single channel
+            self.mono = True
+        elif x.dim() == 3 and x.size(1) == 1:
+            x = x.repeat(1, 2, 1)  # Duplicate the single channel
+            self.mono = True
+        elif x.dim() == 3 and x.size(1) == 2:
+            self.mono = False
+
         encoded = self.model.encode(x, skip_bottleneck=self.skip_bottleneck)
 
         if self.model_half:
@@ -118,6 +128,9 @@ class AutoencoderPretransform(Pretransform):
             z = z.half()
 
         decoded = self.model.decode(z, skip_bottleneck=self.skip_bottleneck)
+
+        if self.mono:
+            decoded = decoded[:, :1, :]  # Return to single channel
 
         if self.model_half:
             decoded = decoded.float()
