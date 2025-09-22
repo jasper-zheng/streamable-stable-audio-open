@@ -16,6 +16,8 @@ https://github.com/user-attachments/assets/ba8006f7-f559-481d-b7a0-5337bf483b2b
 
 To download the pretrained `stable-audio-open-1.0` model, you'll need a HuggingFace account and agree to Stability AI's License Agreement which can be found in the link above.  
 
+A demo for running chunked audio: <a href="https://colab.research.google.com/github/jasper-zheng/streamable-stable-audio-open/blob/main/demo.ipynb" target="_parent"><img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"/></a>  
+
 ## How to export to TorchScript
 
 Use the `export.py` script to export the Stable Audio Open autoencoder to TorchScript format. The script provides several options to customize the export process.
