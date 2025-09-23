@@ -55,7 +55,7 @@ python export.py --test --streaming
 This is a third party implementation and not made by Stability AI, for non-commercial research purpose. Please follow the [stable-audio-community](https://huggingface.co/stabilityai/stable-audio-open-1.0/blob/main/LICENSE.md) license that comes with stable-audio-open-1.0.
 
 ## Acknowledgement
-
+Cached convolution: Caillon, Antoine, and Philippe Esling. “Streamable Neural Audio Synthesis With Non-Causal Convolutions.” arXiv, April 14, 2022. https://doi.org/10.48550/arXiv.2204.07064.  
 Reused model loading/building code from [stable-audio-tools](https://github.com/Stability-AI/stable-audio-tools.git)  
 Reused exporting code from [nn_tilde](https://github.com/acids-ircam/nn_tilde.git)
 
