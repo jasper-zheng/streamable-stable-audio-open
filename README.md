@@ -23,7 +23,7 @@ A demo for running chunked audio: <a href="https://colab.research.google.com/git
 Use the `export.py` script to export the Stable Audio Open autoencoder to TorchScript format. The script provides several options to customize the export process.
 
 **Important:** Make sure to add the `--streaming` flag for cached convolution, otherwise you will hear clicking artifacts when loaded in Max.   
-**Important:** Buffer size in `nn~` is recommended to be something above `4096`, which can be set through the third argument in `nn~`.
+**Important:** Buffer size in `nn~` is recommended to be something above `4096`, which can be set through the third argument in `nn~`.  
 **Important:** If the model exported on `mps` does not work in Max, try `cpu` instead, it still works by switching device via `nn~`'s `gpu` attribute
 
 ```bash
